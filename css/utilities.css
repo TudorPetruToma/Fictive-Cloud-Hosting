@@ -38,6 +38,13 @@
   transform: scale(.9);
 }
 
+/*Backgrounds and colored buttons*/
+
+.bg-primary,
+.btn-primary{
+  background-color: var(--secondary-color)
+}
+
 .text-center{
   text-align: center;
 }
@@ -145,14 +152,5 @@
   padding: 3.5rem;
 }
 
-/*CLI*/
 
-.cli .grid{
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
 
-.cli .grid > *:first-child{
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-}
