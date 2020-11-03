@@ -165,7 +165,22 @@ input{
 .stats{
   padding-top: 6.25rem;
   color: var(--text-secondary);
-  
 }
+
+.stats-heading{
+  font-size: 1.2rem;
+}
+
+.stats .grid h3{
+  font-size: 1.5rem;
+}
+
+.stats .grid p{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/*CLI*/
+
 
 
