@@ -182,14 +182,6 @@ input{
 
 /*CLI*/
 
-.cli .card{
-  color: var(--secondary-color);
-  background-color: #fff;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
-  height: auto;
-}
-
 .cli .grid{
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -206,3 +198,80 @@ input{
   grid-template-columns: 4fr 3fr;
 }
 
+/* Languages */
+
+.languages .flex{
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.languages .card{
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  background-color: #ffffff;
+  color: var(--secondary-color)
+}
+
+.languages .card h4{
+  margin-bottom: .6rem;
+}
+
+.languages .card:hover{
+  transform: scale(1.05);
+}
+
+.footer{
+  margin-top: 3rem;
+}
+
+/* Tablets & under */
+@media(max-width: 768px){
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase{
+    height: auto;
+  }
+
+  .showcase-text{
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+
+  .showcase-form{
+    justify-self: center;
+    margin: auto;
+  }
+
+  .cli .grid > *:first-child{
+    grid-column: 1;
+    grid-row: 2 / span 3;
+  }
+
+  .cli img{
+    width: 100%;
+  }
+}
+/* Mobile */
+@media(max-width: 500px){
+  .navbar{
+    height: 8rem;
+  }
+
+  .navbar .flex{
+    flex-direction: column;
+  }
+
+  .navbar ul{
+    padding: .6rem;
+    margin-bottom: .5rem;
+    background-color: rgba(50, 60, 1, 0.1);
+  }
+}

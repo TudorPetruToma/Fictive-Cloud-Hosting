@@ -45,6 +45,32 @@
   background-color: var(--secondary-color)
 }
 
+.bg-light{
+  background-color: var(--primary-color);
+}
+
+/*Text sizes */
+
+.lead{
+  font-size: 1.25rem; 
+}
+
+.sm{
+  font-size: 1rem;
+}
+
+.md{
+  font-size: 2rem;
+}
+
+.lg{
+  font-size: 3rem;
+}
+
+.xl{
+  font-size: 4rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -152,5 +178,15 @@
   padding: 3.5rem;
 }
 
+/*CLI*/
+
+.cli .card{
+  color: var(--secondary-color);
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  height: auto;
+  text-align: center;
+}
 
 
