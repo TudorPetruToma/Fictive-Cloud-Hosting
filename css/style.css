@@ -4,7 +4,8 @@
   --third-color: #6dc3cc;
   --text-color:#ffffff;
   --text-secondary: #007d98;
-  
+  --succes-color: #7C9900;
+  --alert-color: #99007C;
 }
 
 *{
@@ -41,6 +42,11 @@ p{
 
 img{
   width: 100%
+}
+
+.hidden{
+  visibility: hidden;
+  height: 0;
 }
 
 /*Navbar Style */
@@ -94,6 +100,10 @@ img{
   overflow: visible;
 }
 
+.showcase-text{
+  animation: slideInFromLeft 1.5s ease-in;
+}
+
 .showcase-form{
   position: relative;
   top: 6rem;
@@ -102,6 +112,7 @@ img{
   padding: 2.5rem;
   justify-self: flex-end;
   z-index: 100;
+  animation: slideInFromRight 1.5s ease-in;
 }
 
 .showcase-form .form-control{
@@ -165,6 +176,11 @@ input{
 .stats{
   padding-top: 6.25rem;
   color: var(--text-secondary);
+  
+}
+
+.stats{
+  animation: slideInFromBottom 3s ease-in;
 }
 
 .stats-heading{
@@ -221,11 +237,13 @@ input{
 }
 
 /*Features*/
-.features-head .grid{
+.features-head .grid,
+.docs-head .grid{
   grid-template-columns: 5fr 1fr;
 }
 
-.features-head img{
+.features-head img,
+.docs-head img{
   width: 15rem;
 }
 
@@ -258,8 +276,52 @@ input{
 }
 
 .features-main .grid{
-  padding: 2rem;
-  
+  padding: 1.8rem;
+}
+
+.features-main .grid > *:first-child{
+  grid-column: 1/ span 3;
+}
+
+.features-main .grid > *:nth-child(2){
+  grid-column: 1/ span 2;
+}
+
+/*Docs */
+
+.docs-main nav li{
+  font-size: 1.1rem;
+  padding-bottom: .3rem;
+  margin-bottom: .3rem;
+}
+
+.docs-main a:hover{
+  font-weight: bold;
+}
+
+.docs-main h3{
+  margin: .6rem 0;
+}
+
+.docs-main .grid{
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+
+.alert-succes{
+  margin-bottom: 1rem;
+}
+
+pre,
+code{
+  background-color: #002240;
+  color: #9EFFFF;
+  padding: .3rem 1rem
+}
+
+.first-card a{
+  color: var(--secondary-color);
+  font-weight: 600;
 }
 
 /*Footer*/
@@ -268,6 +330,73 @@ input{
   margin-top: 3rem;
 }
 
+/*Animations*/
+
+  @keyframes slideInFromLeft{
+    0%{
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      -ms-webkit-transform: translateX(-100%);
+      -o-webkit-transform: translateX(-100%);
+      opacity: 0;
+    }
+    100%{
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight{
+    0%{
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+      opacity: 0;
+    }
+    100%{
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromBottom{
+    0%{
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      -o-transform: translateY(100%);
+      opacity: 0;
+    }
+    100%{
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+    }
+  }
+
+  
+  @keyframes slideInFromTop{
+      0%{
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+    }
+    100%{
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);;
+    }
+  }
 
 
 /* Tablets & under */
@@ -276,7 +405,12 @@ input{
   .showcase .grid,
   .stats .grid,
   .cli .grid,
-  .cloud .grid{
+  .cloud .grid,
+  .features-head .grid,
+  .features-sub-head .grid,
+  .features-main .grid,
+  .docs-main .grid,
+  .docs-head .grid{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
@@ -289,6 +423,7 @@ input{
     text-align: center;
     margin-top: 3rem;
     padding-top: 3rem;
+    animation: slideInFormTop 1.5s ease-in;
   }
 
   .showcase-text h1{
@@ -299,6 +434,7 @@ input{
   .showcase-form{
     justify-self: center;
     margin: auto;
+    animation: slideInFormBottom 1.5s ease-in;
   }
 
   .cli .grid > *:first-child{
@@ -308,6 +444,27 @@ input{
 
   .cli img{
     width: 100%;
+  }
+
+  .features-head,
+  .features-sub-head,
+  .docs-head{
+    text-align: center;
+  }
+
+  .features-head img,
+  .features-sub-head img,
+  .docs-head img{
+    justify-self: center;
+  }
+
+  .features-main .grid >*:first-child,
+  .features-main .grid >*:nth-child(2){
+    grid-column: 1;
+  }
+
+  .features-sub-head .grid img{
+    order: 2;
   }
 }
 /* Mobile */
